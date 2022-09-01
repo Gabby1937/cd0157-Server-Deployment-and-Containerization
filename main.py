@@ -102,7 +102,7 @@ def decode_jwt():
                 'exp': data['exp'],
                 'nbf': data['nbf'] }
     return jsonify(**response)
-##
+###
 
 def _get_jwt(user_data):
     exp_time = datetime.datetime.utcnow() + datetime.timedelta(weeks=2)
