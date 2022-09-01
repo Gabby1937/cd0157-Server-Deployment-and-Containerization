@@ -48,10 +48,10 @@ phases:
       - echo $EKS_CLUSTER_NAME
       - echo $EKS_KUBECTL_ROLE_ARN
       - aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --role-arn $EKS_KUBECTL_ROLE_ARN
-      - kubectl apply -f simple_jwt_api.yml 
-      - print f'[{"name":"simple_jwt_api","imageUri":"%s"}]' $REPOSITORY_URI:$TAG > build.json
+      - kubectl apply -f simple_jwt_api.yml
+      - printf '[{"name":"simple_jwt_api","imageUri":"%s"}]' $REPOSITORY_URI:$TAG > build.json
 artifacts:
   files: build.json
 env:
-  parameter-store:         
+  parameter-store:
     JWT_SECRET: JWT_SECRET
