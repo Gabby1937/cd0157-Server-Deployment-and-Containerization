@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: myContainer
-          image: myimage
+          image: Gabby1937/myimage
           securityContext:
             privileged: false
             readOnlyRootFilesystem: false
